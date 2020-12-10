@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "343544328873",
+    "firebase_url": "https://voorraad-f7f32.firebaseio.com",
+    "project_id": "voorraad-f7f32",
+    "storage_bucket": "voorraad-f7f32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343544328873:android:c2e10b8eece814f149afb8",
+        "android_client_info": {
+          "package_name": "nl.soffware.voorraad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343544328873-m3v77o724143c92dc6hacs9ksn4tl7hg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByTBjUkKbRCS7jjcm1vEvyggaZD-62HzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343544328873-m3v77o724143c92dc6hacs9ksn4tl7hg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

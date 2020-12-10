@@ -28,6 +28,17 @@ class BarcodeScannerFragment : Fragment() {
 
     var cameraSource: CameraSource? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.clear()
+    }
+
     @Nullable
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +49,7 @@ class BarcodeScannerFragment : Fragment() {
 
 
         val barcodeDetector = BarcodeDetector.Builder(requireContext())
-            .setBarcodeFormats(Barcode.EAN_8 or Barcode.EAN_13 )
+            .setBarcodeFormats(Barcode.EAN_8 or Barcode.EAN_13)
             .build()
 
         binding.cameraView.holder.addCallback(object : SurfaceHolder.Callback {
@@ -84,7 +95,9 @@ class BarcodeScannerFragment : Fragment() {
                 val barcodes = detections.detectedItems
                 if (barcodes.size() != 0) {
                     viewModel.lastBarcode = barcodes.valueAt(0).rawValue
-                    this@BarcodeScannerFragment.findNavController().navigate(R.id.action_barcodeScannerFragment_to_addProductFragment)
+                    viewModel.fetchScannedProduct(viewModel.lastBarcode)
+                    this@BarcodeScannerFragment.findNavController()
+                        .navigate(R.id.action_barcodeScannerFragment_to_addProductFragment)
                 }
             }
         })
